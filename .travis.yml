@@ -2,10 +2,12 @@ sudo: false
 
 language: generic
 
-# Alternative to "language: java" which has node installed
+# Alternative to "language: java" which has node installed.
+# coreutils is for tac
 before_install:
+  - tac /etc/hosts
   - sudo apt-get update -qq
-  - sudo apt-get install -qq node
+  - sudo apt-get install -qq coreutils node
 
 services:
   - docker
